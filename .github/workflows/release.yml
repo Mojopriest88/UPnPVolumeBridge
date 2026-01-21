@@ -26,14 +26,14 @@ jobs:
       
       - name: Create zip archive
         run: |
-          cd build
-          zip -r UPnPVolumeBridge.zip Plugins/
-          ls -lh UPnPVolumeBridge.zip
+          cd build/Plugins
+          zip -r ../../UPnPVolumeBridge.zip UPnPVolumeBridge/
+          ls -lh ../../UPnPVolumeBridge.zip
       
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: build/UPnPVolumeBridge.zip
+          files: UPnPVolumeBridge.zip
           draft: false
           prerelease: false
         env:
