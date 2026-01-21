@@ -1,0 +1,33 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Create plugin directory structure
+        run: |
+          mkdir -p build/Plugins/UPnPVolumeBridge
+          cp Plugin.pm build/Plugins/UPnPVolumeBridge/
+          cp Settings.pm build/Plugins/UPnPVolumeBridge/
+          cp strings.txt build/Plugins/UPnPVolumeBridge/
+          cp -r HTML build/Plugins/UPnPVolumeBridge/
+          cp LICENSE build/Plugins/UPnPVolumeBridge/
+      
+      - name: Create zip archive
+        run: |
+          cd build
+          zip -r UPnPVolumeBridge.zip Plugins/
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/UPnPVolumeBridge.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

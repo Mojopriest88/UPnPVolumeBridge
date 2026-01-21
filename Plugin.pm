@@ -59,12 +59,21 @@ sub onNotification {
             $new_volume = $client->volume();
         }
         
+        # Ensure volume is an integer (UPnP requirement)
+        $new_volume = int($new_volume);
+        
         $log->info("Player [" . $client->name() . "] volume changed: $new_volume. Forwarding to UPnP...");
         sendUpnpVolume($upnp_url, $new_volume);
     }
     # Handle Mute Changes
     elsif ($type eq 'mute') {
         my $new_mute = $request->getParam('_new');
+        
+        # Fallback if _new is not in params
+        unless (defined $new_mute) {
+            $new_mute = $client->isMuted() ? 1 : 0;
+        }
+        
         $log->info("Player [" . $client->name() . "] mute toggled: $new_mute. Forwarding to UPnP...");
         sendUpnpMute($upnp_url, $new_mute);
     }
@@ -119,16 +128,19 @@ sub sendSoapRequest {
     Slim::Networking::SimpleAsyncHTTP->new(
         \&_httpResponse,
         \&_httpError,
+        { timeout => 5 },
     )->post($url, $body, \%headers);
 }
 
 sub _httpResponse {
-    # Request successful
+    my $http = shift;
+    my $result = shift;
+    $log->info("UPnP request succeeded");
 }
 
 sub _httpError {
     my $error = shift;
-    $log->warn("UPnP Request Error: " . $error);
+    $log->error("UPnP Request Error: " . (defined $error ? $error : "Unknown error"));
 }
 
 1;
