@@ -5,10 +5,13 @@
       <desc>Syncs Lyrion player volume with an external UPnP/DLNA renderer.</desc>
       <version>1.0.0</version>
       <author>Mojopriest88</author>
+      <link>https://github.com/Mojopriest88/UPnPVolumeBridge</link>
       <url>https://github.com/Mojopriest88/UPnPVolumeBridge/archive/refs/heads/main.zip</url>
       <targetConfig>
         <minTarget>8.0</minTarget>
       </targetConfig>
+      <sha>main</sha>
     </upnpvolumebridge>
   </plugins>
 </SqueezeboxCommunityPlugins>
+
