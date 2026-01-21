@@ -1,3 +1,5 @@
+Plugin is a work in progress and does not yet work!
+
 Lyrion UPnP Volume Bridge
 
 A plugin for Lyrion Music Server (formerly Logitech Media Server) that synchronizes player volume and mute states with external UPnP/DLNA rendering devices.
