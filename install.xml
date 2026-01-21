@@ -1,15 +1,15 @@
 <?xml version="1.0"?> 
  <extension>
   	<name>PLUGIN_UPNPVOLUMEBRIDGE_MODULE_NAME</name> 
-  	<creator>Chris</creator> 
-   	<email>test@test.nl</email> 
+  	<creator>Mojopriest88</creator> 
+   	<email>mojopriest6@gmail.com</email> 
  	<defaultState>enabled</defaultState> 
   	<description>PLUGIN_UPNPVOLUMEBRIDGE_DESCRIPTION</description> 
   	<module>Plugins::UPnPVolumeBridge::Plugin</module>
  	<targetApplication>
-  		<id>SqueezeCenter</id> 
+  		<id>Lyrion</id> 
   		<maxVersion>*</maxVersion> 
-  		<minVersion>8.0</minVersion> 
+  		<minVersion>9.0</minVersion> 
   	</targetApplication>
   	<type>2</type> 
   	<version>0.1.2</version> 
