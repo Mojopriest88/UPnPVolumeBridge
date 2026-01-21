@@ -1,10 +1,10 @@
 [% PROCESS settings/header.html %]
 
-    [% WRAPPER setting title="PLUGIN_UPNPVOLUMEBRIDGE_1" desc="PLUGIN_UPNPVOLUMEBRIDGE_2" %]
+    [% WRAPPER setting title="Enable Bridge for this player" desc="If checked, volume and mute actions on this player will be mirrored to the UPnP device." %]
         <input type="checkbox" name="enabled" [% IF enabled %]checked[% END %] value="1" />
     [% END %]
 
-	[% WRAPPER setting title="PLUGIN_UPNPVOLUMEBRIDGE_3" desc="PLUGIN_UPNPVOLUMEBRIDGE_4" %]
+	[% WRAPPER setting title="UPnP Control URL" desc="The full URL of the RenderingControl service (e.g., http://192.168.1.50:1400/MediaRenderer/RenderingControl/Control)." %]
 		<input type="text" class="stdedit" name="upnp_control_url" id="upnp_control_url" value="[% upnp_control_url %]" size="60" />
 	[% END %]
 
