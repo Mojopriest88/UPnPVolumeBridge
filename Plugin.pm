@@ -8,6 +8,9 @@ use Slim::Utils::Prefs;
 use Slim::Networking::SimpleAsyncHTTP;
 use Scalar::Util qw(blessed);
 
+# Load the Settings class
+use Plugins::UPnPVolumeBridge::Settings;
+
 # Create a log category for debugging
 my $log = Slim::Utils::Log->addLogCategory({
     'category'     => 'plugin.upnpvolumebridge',
