@@ -25,7 +25,7 @@ sub prefs {
 }
 
 sub needsClient {
-    return 1;
+    return 0;
 }
 
 1;
