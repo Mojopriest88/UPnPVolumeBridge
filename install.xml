@@ -3,7 +3,7 @@
 <upnpvolumebridge>
         <title>UPnP Volume Bridge</title>
         <name>Plugins::UPnPVolumeBridge::Plugin</name>
-        <version>0.1.0</version>
+        <version>1.0.1</version>
         <minTarget>8.0</minTarget>
         <maxTarget>*</maxTarget>
         <author>Your Name</author>
