@@ -1,5 +1,7 @@
-PLUGIN_UPNPVOLUMEBRIDGE_TITLE	EN	UPnP Volume Bridge
-PLUGIN_UPNPVOLUMEBRIDGE_ENABLE	EN	Enable Bridge for this player
-PLUGIN_UPNPVOLUMEBRIDGE_ENABLE_DESC	EN	If checked, volume and mute actions on this player will be mirrored to the UPnP device.
-PLUGIN_UPNPVOLUMEBRIDGE_URL	EN	UPnP Control URL
-PLUGIN_UPNPVOLUMEBRIDGE_URL_DESC	EN	The full URL of the RenderingControl service (e.g., http://192.168.1.50:1400/MediaRenderer/RenderingControl/Control).
+PLUGIN_UPNPVOLUMEBRIDGE
+	EN
+		0	UPnP Volume Bridge
+		1	Enable Bridge for this player
+		2	If checked, volume and mute actions on this player will be mirrored to the UPnP device.
+		3	UPnP Control URL
+		4	The full URL of the RenderingControl service (e.g., http://192.168.1.50:1400/MediaRenderer/RenderingControl/Control).

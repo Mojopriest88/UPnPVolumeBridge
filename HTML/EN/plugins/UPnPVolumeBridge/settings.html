@@ -1,10 +1,10 @@
 [% PROCESS settings/header.html %]
 
-    [% WRAPPER setting title="PLUGIN_UPNPVOLUMEBRIDGE_ENABLE" desc="PLUGIN_UPNPVOLUMEBRIDGE_ENABLE_DESC" %]
+    [% WRAPPER setting title="PLUGIN_UPNPVOLUMEBRIDGE_1" desc="PLUGIN_UPNPVOLUMEBRIDGE_2" %]
         <input type="checkbox" name="enabled" [% IF enabled %]checked[% END %] value="1" />
     [% END %]
 
-	[% WRAPPER setting title="PLUGIN_UPNPVOLUMEBRIDGE_URL" desc="PLUGIN_UPNPVOLUMEBRIDGE_URL_DESC" %]
+	[% WRAPPER setting title="PLUGIN_UPNPVOLUMEBRIDGE_3" desc="PLUGIN_UPNPVOLUMEBRIDGE_4" %]
 		<input type="text" class="stdedit" name="upnp_control_url" id="upnp_control_url" value="[% upnp_control_url %]" size="60" />
 	[% END %]
 

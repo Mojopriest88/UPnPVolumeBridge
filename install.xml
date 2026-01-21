@@ -1,10 +1,10 @@
 <?xml version="1.0"?> 
  <extension>
-  	<name>PLUGIN_UPNPVOLUMEBRIDGE_MODULE_NAME</name> 
+  	<name>PLUGIN_UPNPVOLUMEBRIDGE_0</name> 
   	<creator>Mojopriest88</creator> 
    	<email>mojopriest6@gmail.com</email> 
  	<defaultState>enabled</defaultState> 
-  	<description>PLUGIN_UPNPVOLUMEBRIDGE_DESCRIPTION</description> 
+  	<description>PLUGIN_UPNPVOLUMEBRIDGE_2</description> 
   	<module>Plugins::UPnPVolumeBridge::Plugin</module>
  	<targetApplication>
   		<id>Lyrion</id> 
