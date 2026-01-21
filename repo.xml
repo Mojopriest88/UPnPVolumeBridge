@@ -1,14 +1,14 @@
-<?xml version='1.0' standalone='yes'?>
+<?xml version="1.0" encoding="utf-8"?>
 <extensions>
   <plugins>
-    <plugin minTarget=“8”.0 name=“UP”nPVolumeBridge version=“0.1.0” maxTarget="*">
+    <plugin name="UPnPVolumeBridge" version="1.0.0" minTarget="8.0" maxTarget="*">
       <title lang="EN">UPnP Volume Bridge</title>
-      <url>https://github.com/Mojopriest88/UPnPVolumeBridge/archive/refs/heads/main.zip</url>
       <desc lang="EN">Syncs Lyrion player volume with an external UPnP/DLNA renderer.</desc>
+      <url>https://github.com/Mojopriest88/UPnPVolumeBridge/archive/refs/heads/main.zip</url>
       <category>hardware</category>
-      <sha>main</sha>
       <creator>Mojopriest88</creator>
       <link>https://github.com/Mojopriest88/UPnPVolumeBridge</link>
+      <sha>main</sha>
     </plugin>
   </plugins>
 </extensions>
