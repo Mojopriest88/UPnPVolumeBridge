@@ -19,15 +19,19 @@ jobs:
           cp strings.txt build/Plugins/UPnPVolumeBridge/
           cp -r HTML build/Plugins/UPnPVolumeBridge/
           cp LICENSE build/Plugins/UPnPVolumeBridge/
+          ls -la build/Plugins/UPnPVolumeBridge/
       
       - name: Create zip archive
         run: |
           cd build
           zip -r UPnPVolumeBridge.zip Plugins/
+          ls -lh UPnPVolumeBridge.zip
       
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: build/UPnPVolumeBridge.zip
+          draft: false
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
