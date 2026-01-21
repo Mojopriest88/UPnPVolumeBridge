@@ -1,6 +1,3 @@
-# UPnPVolumeBridge
-A plugin for Lyrion Music Server that syncs Lyrion player volume with an external UPnP/DLNA renderer.
-
 Lyrion UPnP Volume Bridge
 
 A plugin for Lyrion Music Server (formerly Logitech Media Server) that synchronizes player volume and mute states with external UPnP/DLNA rendering devices.
@@ -19,9 +16,30 @@ Async Execution: Uses non-blocking HTTP requests to ensure server stability.
 
 Installation
 
+Method 1: Via Lyrion Repository (Recommended)
+
+You can add this GitHub repository directly to Lyrion to handle installations and updates automatically:
+
+Open the Lyrion Web Interface.
+
+Go to Settings > Plugins.
+
+At the bottom of the page, look for Additional Repositories.
+
+Add the following URL:
+https://raw.githubusercontent.com/Mojopriest88/UPnPVolumeBridge/main/repo.xml
+
+Click Apply.
+
+Find UPnP Volume Bridge in the plugin list, check the box, and click Apply at the bottom right.
+
+Method 2: Manual Installation
+
+Download the source code as a ZIP file.
+
 Create a folder named UPnPVolumeBridge in your Lyrion Plugins directory.
 
-Clone or copy these files into that directory.
+Extract the files into that directory.
 
 Restart Lyrion Music Server.
 
