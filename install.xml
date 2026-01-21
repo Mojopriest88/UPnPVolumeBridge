@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<plugins>
-<upnpvolumebridge>
-        <title>UPnP Volume Bridge</title>
-        <name>Plugins::UPnPVolumeBridge::Plugin</name>
-        <version>1.0.1</version>
-        <minTarget>8.0</minTarget>
-        <maxTarget>*</maxTarget>
-        <author>Your Name</author>
-        <desc>Syncs Lyrion player volume with an external UPnP/DLNA renderer.</desc>
-        <email>your@email.com</email>
-</upnpvolumebridge>
-</plugins>
+<?xml version="1.0"?> 
+ <extension>
+  	<name>PLUGIN_UPNPVOLUMEBRIDGE_MODULE_NAME</name> 
+  	<creator>Chris</creator> 
+   	<email>test@test.nl</email> 
+ 	<defaultState>enabled</defaultState> 
+  	<description>PLUGIN_UPNPVOLUMEBRIDGE_DESCRIPTION</description> 
+  	<module>Plugins::UPnPVolumeBridge::Plugin</module>
+ 	<targetApplication>
+  		<id>SqueezeCenter</id> 
+  		<maxVersion>*</maxVersion> 
+  		<minVersion>8.0</minVersion> 
+  	</targetApplication>
+  	<type>2</type> 
+  	<version>0.1.0</version> 
+  </extension>
