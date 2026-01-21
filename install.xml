@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugins>
+<upnpvolumebridge>
+        <title>UPnP Volume Bridge</title>
+        <name>Plugins::UPnPVolumeBridge::Plugin</name>
+        <version>0.1.0</version>
+        <minTarget>8.0</minTarget>
+        <maxTarget>*</maxTarget>
+        <author>Your Name</author>
+        <desc>Syncs Lyrion player volume with an external UPnP/DLNA renderer.</desc>
+        <email>your@email.com</email>
+</upnpvolumebridge>
+</plugins>
