@@ -20,6 +20,7 @@ jobs:
           cp Plugin.pm build/Plugins/UPnPVolumeBridge/
           cp Settings.pm build/Plugins/UPnPVolumeBridge/
           cp strings.txt build/Plugins/UPnPVolumeBridge/
+          cp install.xml build/Plugins/UPnPVolumeBridge/
           cp -r HTML build/Plugins/UPnPVolumeBridge/
           cp LICENSE build/Plugins/UPnPVolumeBridge/
           ls -la build/Plugins/UPnPVolumeBridge/
