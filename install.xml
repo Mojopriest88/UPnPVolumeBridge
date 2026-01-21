@@ -6,6 +6,7 @@
  	<defaultState>enabled</defaultState> 
   	<description>PLUGIN_UPNPVOLUMEBRIDGE_2</description> 
   	<module>Plugins::UPnPVolumeBridge::Plugin</module>
+  	<settings>Plugins::UPnPVolumeBridge::Settings</settings>
  	<targetApplication>
   		<id>Lyrion</id> 
   		<maxVersion>*</maxVersion> 
