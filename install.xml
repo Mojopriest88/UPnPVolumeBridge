@@ -1,17 +1,15 @@
-<?xml version="1.0"?> 
- <extension>
-  	<name>PLUGIN_UPNPVOLUMEBRIDGE_0</name> 
-  	<creator>Mojopriest88</creator> 
-   	<email>mojopriest6@gmail.com</email> 
- 	<defaultState>enabled</defaultState> 
-  	<description>PLUGIN_UPNPVOLUMEBRIDGE_2</description> 
-  	<module>Plugins::UPnPVolumeBridge::Plugin</module>
-  	<settings>Plugins::UPnPVolumeBridge::Settings</settings>
- 	<targetApplication>
-  		<id>Lyrion</id> 
-  		<maxVersion>*</maxVersion> 
-  		<minVersion>9.0</minVersion> 
-  	</targetApplication>
-  	<type>2</type> 
-  	<version>0.1.2</version> 
-  </extension>
+<?xml version='1.0' standalone='yes'?>
+<plugin name="UPnPVolumeBridge" version="1.0">
+	<targetApplication>
+		<id>Lyrion Music Server</id>
+		<minVersion>7.0</minVersion>
+		<maxVersion>*</maxVersion>
+	</targetApplication>
+	<title>UPnP Volume Bridge</title>
+	<name>UPnPVolumeBridge</name>
+	<description>Forwards volume commands from a specific player to a UPnP device (e.g. PS Audio Bridge) and syncs volume back.</description>
+	<creator>Antigravity</creator>
+	<email>support@example.com</email>
+	<module>Plugins::UPnPVolumeBridge::Plugin</module>
+	<url>https://github.com/example/UPnPVolumeBridge</url>
+</plugin>
