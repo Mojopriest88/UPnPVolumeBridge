@@ -16,19 +16,19 @@ jobs:
       
       - name: Create plugin directory structure
         run: |
-          mkdir -p build/Plugins/UPnPVolumeBridge
-          cp -r lib/Plugins/UPnPVolumeBridge/* build/Plugins/UPnPVolumeBridge/
-          cp strings.txt build/Plugins/UPnPVolumeBridge/
-          cp install.xml build/Plugins/UPnPVolumeBridge/
-          cp -r HTML build/Plugins/UPnPVolumeBridge/
-          cp LICENSE build/Plugins/UPnPVolumeBridge/
-          ls -la build/Plugins/UPnPVolumeBridge/
+          mkdir -p build/UPnPVolumeBridge
+          cp -r lib build/UPnPVolumeBridge/
+          cp strings.txt build/UPnPVolumeBridge/
+          cp install.xml build/UPnPVolumeBridge/
+          cp -r HTML build/UPnPVolumeBridge/
+          cp LICENSE build/UPnPVolumeBridge/
+          ls -la build/UPnPVolumeBridge/
       
       - name: Create zip archive
         run: |
-          cd build/Plugins
-          zip -r ../../UPnPVolumeBridge.zip UPnPVolumeBridge/
-          ls -lh ../../UPnPVolumeBridge.zip
+          cd build
+          zip -r ../UPnPVolumeBridge.zip UPnPVolumeBridge/
+          ls -lh ../UPnPVolumeBridge.zip
       
       - name: Create Release
         uses: softprops/action-gh-release@v1
