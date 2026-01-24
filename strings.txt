@@ -1,0 +1,31 @@
+PLUGIN_UPNPVOLUMEBRIDGE
+	EN	UPnP Volume Bridge
+	NL	UPnP Volume Bridge
+
+PLUGIN_UPNPVOLUMEBRIDGE_SETTINGS_TITLE
+	EN	UPnP Volume Bridge Settings
+	NL	UPnP Volume Bridge Instellingen
+
+PLUGIN_UPNPVOLUMEBRIDGE_DESCRIPTION
+	EN	Forward volume control to external UPnP devices.
+	NL	Stuur volume bediening door naar externe UPnP apparaten.
+
+PLUGIN_UPNPVOLUMEBRIDGE_PLAYER
+	EN	Player
+	NL	Speler
+
+PLUGIN_UPNPVOLUMEBRIDGE_ENABLED
+	EN	Enabled
+	NL	Ingeschakeld
+
+PLUGIN_UPNPVOLUMEBRIDGE_IP
+	EN	Bridge IP Address
+	NL	Bridge IP Adres
+
+PLUGIN_UPNPVOLUMEBRIDGE_PORT
+	EN	Bridge Port (Default: 38400)
+	NL	Bridge Poort (Standaard: 38400)
+
+PLUGIN_UPNPVOLUMEBRIDGE_SYNC
+	EN	Sync Volume (DAC -> LMS)
+	NL	Synchroniseer Volume (DAC -> LMS)
