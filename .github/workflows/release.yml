@@ -41,6 +41,9 @@ jobs:
 
       - name: Update repo.xml
         run: |
+          # Checkout main branch to avoid detached HEAD
+          git checkout main
+          
           # Calculate SHA1
           SHA=$(sha1sum UPnPVolumeBridge.zip | awk '{print $1}')
           VERSION=${GITHUB_REF#refs/tags/v}
@@ -55,4 +58,5 @@ jobs:
           git config --global user.email 'action@github.com'
           git add repo.xml
           git commit -m "Update repo.xml for version $VERSION"
-          git push
+          git push origin main
+
