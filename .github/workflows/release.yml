@@ -38,3 +38,21 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update repo.xml
+        run: |
+          # Calculate SHA1
+          SHA=$(sha1sum UPnPVolumeBridge.zip | awk '{print $1}')
+          VERSION=${GITHUB_REF#refs/tags/v}
+          
+          # Update repo.xml using sed
+          sed -i "s/version=\"[^\"]*\"/version=\"$VERSION\"/" repo.xml
+          sed -i "s|<sha>.*</sha>|<sha>$SHA</sha>|" repo.xml || sed -i "s|</plugin>|<sha>$SHA</sha>\n    </plugin>|" repo.xml
+          sed -i "s|/v[0-9.]*/UPnPVolumeBridge.zip|/v$VERSION/UPnPVolumeBridge.zip|" repo.xml
+          
+          # Commit and Push
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add repo.xml
+          git commit -m "Update repo.xml for version $VERSION"
+          git push
