@@ -16,12 +16,31 @@ This plugin bridges the gap between LMS's volume slider and high-end audio equip
 
 ## Installation
 
-1.  Download this repository.
-2.  Copy the `UPnPVolumeBridge` folder to your LMS Plugins directory:
+### Recommended: Via Repository URL
+
+1.  Open your **Lyrion Music Server** web interface.
+2.  Navigate to **Settings** → **Plugins**.
+3.  Scroll down to the bottom and find **Additional Repositories**.
+4.  Add this repository URL:
+    ```
+    https://raw.githubusercontent.com/Mojopriest88/UPnPVolumeBridge/main/repo.xml
+    ```
+5.  Click **Apply** to save the repository.
+6.  Scroll back up to the **Third Party Plugins** section.
+7.  Find **UPnP Volume Bridge** in the list and check the box to enable it.
+8.  Click **Apply** and restart Lyrion Music Server when prompted.
+
+### Alternative: Manual Installation
+
+If you prefer to install manually:
+
+1.  Download the latest release from [GitHub Releases](https://github.com/Mojopriest88/UPnPVolumeBridge/releases).
+2.  Extract the `UPnPVolumeBridge` folder to your LMS Plugins directory:
     *   **Windows:** `C:\Program Files\Lyrion\server\Plugins\`
     *   **Linux/Docker:** `/var/lib/squeezeboxserver/Plugins/` (path varies by install)
 3.  Restart Lyrion Music Server.
-4.  Go to **Settings** -> **Plugins** and ensure **UPnP Volume Bridge** is active.
+4.  Go to **Settings** → **Plugins** and ensure **UPnP Volume Bridge** is active.
+
 
 ---
 
