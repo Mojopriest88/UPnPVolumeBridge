@@ -38,7 +38,7 @@ This plugin bridges the gap between LMS's volume slider and high-end audio equip
 
 ## 🎧 Bit-Perfect Volume Control (The "Dummy Player" Method)
 
-By default, LMS attenuates the audio signal digitally when you lower the volume. If your DAC supports remote volume control, you probably want to send a **100% bit-perfect stream** to the DAC and let the DAC handle the volume in the analog domain.
+By default, LMS attenuates the audio signal digitally when you lower the volume. If your DAC supports remote volume control, you probably want to send a **100% bit-perfect stream** to the DAC and let the DAC handle the volume in it's own digital domain.
 
 To achieve this **without** LMS constantly fighting the volume slider, use the **Dummy Player** strategy:
 
@@ -66,6 +66,6 @@ You need a secondary "virtual" player in LMS that controls the volume, while you
 2.  Lyrion updates the visual slider for the group.
 3.  **The Plugin** sees the Dummy Player change and sends the UPnP command to your physical DAC.
 4.  **The Real Player** ignores the volume change (because it's set to Fixed 100%) and keeps streaming bit-perfect audio.
-5.  Your DAC adjusts the volume analogly.
+5.  Your DAC adjusts the volume digitally.
 
 Enjoy the best of both worlds: Digital perfection and convenient App control!
