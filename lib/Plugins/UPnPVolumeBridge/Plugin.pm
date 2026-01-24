@@ -30,8 +30,8 @@ sub initPlugin {
 	require Plugins::UPnPVolumeBridge::Settings;
 	Plugins::UPnPVolumeBridge::Settings->new;
 
-	# Start Polling Timer (every 2 seconds)
-	$timer = Slim::Utils::Timers::setTimer($class, \&pollVolume, 2);
+	# Start Polling Timer (every 1 seconds)
+	$timer = Slim::Utils::Timers::setTimer($class, Time::HiRes::time() + 1, \&pollVolume);
 
 	$log->info("UPnPVolumeBridge initialized");
 }
@@ -39,7 +39,7 @@ sub initPlugin {
 sub shutdownPlugin {
 	my $class = shift;
 	if ($timer) {
-		Slim::Utils::Timers::killTimer($timer);
+		Slim::Utils::Timers::killTimers($class, \&pollVolume);
 		$timer = undef;
 	}
 	$class->SUPER::shutdownPlugin(@_);
@@ -80,21 +80,29 @@ sub volumeCallback {
 
 sub pollVolume {
 	my $class = shift;
+	
+	$log->debug("Poll timer tick..."); 
 
-	for my $client (Slim::Player::Client::clients()) {
+	my @clients = Slim::Player::Client::clients();
+	$log->debug("Connected clients: " . scalar(@clients));
+
+	for my $client (@clients) {
 		my $id = $client->id;
+		$log->debug("Checking player $id: enabled=" . ($prefs->get("enabled_$id")//0) . ", sync=" . ($prefs->get("sync_$id")//0));
+		
 		if ($prefs->get("enabled_$id") && $prefs->get("sync_$id")) {
 			my $ip = $prefs->get("ip_$id");
 			my $port = $prefs->get("port_$id") || '38400';
 			
 			if ($ip) {
+				$log->debug("Polling volume for $id at $ip"); 
 				sendGetVolume($client, $ip, $port);
 			}
 		}
 	}
 
 	# Reschedule
-	$timer = Slim::Utils::Timers::setTimer($class, \&pollVolume, 2);
+	$timer = Slim::Utils::Timers::setTimer($class, Time::HiRes::time() + 1, \&pollVolume);
 }
 
 sub sendSetVolume {
@@ -158,6 +166,8 @@ sub _getVolumeCallback {
 	my ($client, $response) = @_;
 	
 	my $content = $response->content;
+	$log->debug("UPnP Response: $content");
+	
 	if ($content =~ /<CurrentVolume>(\d+)<\/CurrentVolume>/) {
 		my $upnpVol = $1;
 		my $lmsVol = $client->volume();
@@ -167,8 +177,10 @@ sub _getVolumeCallback {
 			$log->info("Syncing volume from UPnP ($upnpVol) to LMS ($lmsVol)");
 			
 			# Execute request with specific source to avoid loop
-			my $req = Slim::Control::Request::executeRequest($client, ['mixer', 'volume', $upnpVol], 'PLUGIN_UPNPVOLUMEBRIDGE');
+			my $req = Slim::Control::Request::executeRequest($client, ['mixer', 'volume', $upnpVol], { source => 'PLUGIN_UPNPVOLUMEBRIDGE' });
 		}
+	} else {
+		$log->warn("Could not parse volume from UPnP response: " . substr($content, 0, 200));
 	}
 }
 

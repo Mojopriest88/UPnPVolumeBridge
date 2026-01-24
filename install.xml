@@ -1,5 +1,5 @@
 <?xml version='1.0' standalone='yes'?>
-<plugin name="UPnPVolumeBridge" version="0.1.3">
+<plugin name="UPnPVolumeBridge" version="1.0">
 	<targetApplication>
 		<id>Lyrion Music Server</id>
 		<minVersion>7.0</minVersion>

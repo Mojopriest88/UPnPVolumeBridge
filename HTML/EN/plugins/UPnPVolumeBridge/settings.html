@@ -1,34 +1,34 @@
 [% PROCESS settings/header.html %]
 
-	[% WRAPPER setting title=cred.title desc=cred.desc %]
-		<div>[% "PLUGIN_UPNPVOLUMEBRIDGE_DESCRIPTION" | string %]</div>
-		<br/>
-		<table>
-			<tr>
-				<th>[% "PLUGIN_UPNPVOLUMEBRIDGE_PLAYER" | string %]</th>
-				<th>[% "PLUGIN_UPNPVOLUMEBRIDGE_ENABLED" | string %]</th>
-				<th>[% "PLUGIN_UPNPVOLUMEBRIDGE_IP" | string %]</th>
-				<th>[% "PLUGIN_UPNPVOLUMEBRIDGE_PORT" | string %]</th>
-				<th>[% "PLUGIN_UPNPVOLUMEBRIDGE_SYNC" | string %]</th>
-			</tr>
-			[% FOREACH player IN players %]
-			<tr>
-				<td>[% player.name | html %]</td>
-				<td>
-					<input type="checkbox" name="enabled_[% player.id %]" [% IF player.enabled %]checked[% END %] value="1">
-				</td>
-				<td>
-					<input type="text" name="ip_[% player.id %]" value="[% player.ip | html %]" size="15">
-				</td>
-				<td>
-					<input type="text" name="port_[% player.id %]" value="[% player.port | html %]" size="6">
-				</td>
-				<td>
-					<input type="checkbox" name="sync_[% player.id %]" [% IF player.sync %]checked[% END %] value="1">
-				</td>
-			</tr>
-			[% END %]
-		</table>
+[% WRAPPER setting title=cred.title desc=cred.desc %]
+<div>[% "PLUGIN_UPNPVOLUMEBRIDGE_DESCRIPTION" | string %]</div>
+<br />
+<table cellspacing="10" cellpadding="2" border="0" width="100%">
+	<tr>
+		<th style="text-align:left">[% "PLUGIN_UPNPVOLUMEBRIDGE_PLAYER" | string %]</th>
+		<th style="text-align:center">[% "PLUGIN_UPNPVOLUMEBRIDGE_ENABLED" | string %]</th>
+		<th style="text-align:left">[% "PLUGIN_UPNPVOLUMEBRIDGE_IP" | string %]</th>
+		<th style="text-align:left">[% "PLUGIN_UPNPVOLUMEBRIDGE_PORT" | string %]</th>
+		<th style="text-align:center">[% "PLUGIN_UPNPVOLUMEBRIDGE_SYNC" | string %]</th>
+	</tr>
+	[% FOREACH player IN players %]
+	<tr style="border-bottom: 1px solid #ccc;">
+		<td style="padding-top: 5px; padding-bottom: 5px;">[% player.name | html %]</td>
+		<td style="text-align:center">
+			<input type="checkbox" name="enabled_[% player.id %]" [% IF player.enabled %]checked[% END %] value="1">
+		</td>
+		<td>
+			<input type="text" name="ip_[% player.id %]" value="[% player.ip | html %]" size="15">
+		</td>
+		<td>
+			<input type="text" name="port_[% player.id %]" value="[% player.port | html %]" size="6">
+		</td>
+		<td style="text-align:center">
+			<input type="checkbox" name="sync_[% player.id %]" [% IF player.sync %]checked[% END %] value="1">
+		</td>
+	</tr>
 	[% END %]
+</table>
+[% END %]
 
 [% PROCESS settings/footer.html %]
