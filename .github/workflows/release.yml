@@ -50,9 +50,18 @@ jobs:
           SHA=$(sha1sum UPnPVolumeBridge.zip | awk '{print $1}')
           VERSION=${GITHUB_REF#refs/tags/v}
           
-          # Update repo.xml using sed
-          sed -i "s/version=\"[^\"]*\"/version=\"$VERSION\"/" repo.xml
-          sed -i "s|<sha>.*</sha>|<sha>$SHA</sha>|" repo.xml || sed -i "s|</plugin>|<sha>$SHA</sha>\n    </plugin>|" repo.xml
+          # Update repo.xml using more specific sed patterns
+          # Update version only in the <plugin> tag
+          sed -i "s/\(<plugin.*\)version=\"[^\"]*\"/\1version=\"$VERSION\"/" repo.xml
+          
+          # Update or Insert SHA tag before </plugin>
+          if grep -q "<sha>" repo.xml; then
+            sed -i "s|<sha>.*</sha>|<sha>$SHA</sha>|" repo.xml
+          else
+            sed -i "s|</plugin>|  <sha>$SHA</sha>\n    </plugin>|" repo.xml
+          fi
+          
+          # Update download URL
           sed -i "s|/v[0-9.]*/UPnPVolumeBridge.zip|/v$VERSION/UPnPVolumeBridge.zip|" repo.xml
           
           # Commit and Push
